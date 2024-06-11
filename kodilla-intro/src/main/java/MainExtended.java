@@ -6,7 +6,7 @@ public class MainExtended {
         double priceCourse = 8999.00;
         char initialOfNameOfLang = 'J';
         boolean isOnline = true;
-        
+
         System.out.println(programmingSchool);
         System.out.println(nameOfCourse);
         System.out.println(durationCourseWeek + " weeks");
