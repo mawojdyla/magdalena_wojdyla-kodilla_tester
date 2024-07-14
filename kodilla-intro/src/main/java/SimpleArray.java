@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class SimpleArray {
     public static void main(String[] args) {
       String[] animals = new String[] {"lion", "turtle", "donkey", "monkey", "zebra"} ;
