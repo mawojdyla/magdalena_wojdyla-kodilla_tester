@@ -5,7 +5,7 @@ public class Grades {
 
     public Grades() {
         this.grades = new int[10];
-        this.size = 0;
+        this.size = 0;  // liczba dodanych elementów
         this.sum = 0.0;
     }
 
@@ -21,7 +21,7 @@ public class Grades {
         if (this.size == 0) {
             return -1;
         }
-        return this.grades[this.size - 1];
+        return this.grades[this.size - 1]; // odejmuję ostatni element
     }
 
     public double average() {
