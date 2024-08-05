@@ -4,9 +4,19 @@ import java.util.Objects;
 
 public class Ford implements Car {
     private int speed;
+    private String model;
 
     public Ford() {
         this.speed = 0;
+        this.model = "Ford";
+    }
+    public Ford(String model) {
+        this.model = model;
+        this.speed = 0;
+    }
+
+    public String getModel() {
+        return model;
     }
 
     @Override

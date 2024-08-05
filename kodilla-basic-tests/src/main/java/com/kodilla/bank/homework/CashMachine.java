@@ -33,5 +33,16 @@ public class CashMachine {      // to definicja bankomatu z inf o transakcjach/ 
     public int[] getTransactions() {        // zwraca tablicę transakcji
         return transactions;            // metoda dostępowa, która umożliwia uzyskanie dostępu do prywatnego pola transactions z zewnątrz klasy CashMachine.
     }
+
+    public int getTotalWithdrawalTransactions() {       // oblicza transakcje wypłat
+        int count = 0;
+        for (int transaction : this.transactions) {
+            if (transaction < 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
 

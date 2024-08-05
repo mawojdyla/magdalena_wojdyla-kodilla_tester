@@ -45,5 +45,15 @@ public class CashMachineTestSuite {
         assertArrayEquals(new int[]{}, cashMachine.getTransactions());
     }
 
+    @Test
+    void testGetTotalWithdrawalTransactions() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.addTransaction(-100);
+        cashMachine.addTransaction(-150);
+        cashMachine.addTransaction(300);
+
+        assertEquals(2, cashMachine.getTotalWithdrawalTransactions());
+
+    }
 
 }

@@ -7,4 +7,8 @@ public interface Car {
     void increaseSpeed();
 
     void decreaseSpeed();
+
+    default String getModel() {
+        return getClass().getSimpleName();
+    }
 }

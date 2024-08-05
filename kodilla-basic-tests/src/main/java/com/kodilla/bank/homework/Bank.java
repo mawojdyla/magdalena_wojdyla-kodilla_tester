@@ -8,7 +8,8 @@ public class Bank {
         this.cashMachines = new CashMachine[0]; //   inicjalizacja pustej tablicy
         this.size = 0;
     }
-// metoda do dodawania bankomatów do tablicy
+
+    // metoda do dodawania bankomatów do tablicy
     public void addCashMachine(CashMachine cashMachine) {   // '(CashMachine cashMachine)' parametr typu 'CashMachine' ze zmienną tego argumentu 'cashmachine'
         this.size++;
         CashMachine[] newCashMachines = new CashMachine[this.size];
@@ -40,11 +41,7 @@ public class Bank {
     public int getTotalWithdrawalTransactions() {       // oblicza transakcje wypłat
         int count = 0;
         for (CashMachine cashMachine : cashMachines) {
-            for (int transaction : cashMachine.getTransactions()) {
-                if (transaction < 0) {
-                    count++;
-                }
-            }
+            count += cashMachine.getTotalWithdrawalTransactions();
         }
         return count;
     }
@@ -82,7 +79,7 @@ public class Bank {
         if (count == 0) {               // skrótowy zapis : "count == 0 ? 0 : (double) sum / count;"
             return 0;
         } else {
-            return (double) sum / count;
+            return (double) sum / count;    // Math.abs(sum/count) <-- daje wartość bezwględną
         }
 
     }
