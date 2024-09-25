@@ -30,12 +30,9 @@ class AnimalFactoryTestSuite {
         String voice = animal.getVoice();
         System.out.println(voice);
         // Then
-        List<String> possibleVoices = Arrays.asList("Bark bark", "Meow meow", "Quak quak");
+        List<String> possibleVoices = Arrays.asList("Bark bark", "Meow meow", "Quack quack");
         Assertions.assertTrue(possibleVoices.contains(voice));
     }
-
-
-
 
 }
 // Zasada działania testu jest taka sama, jak w poprzednich przypadkach:
