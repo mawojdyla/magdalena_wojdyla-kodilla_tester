@@ -1,4 +1,4 @@
-package com.kodilla.rest.controller;
+package com.kodilla.rest.domain;
 
 import java.util.Objects;
 
@@ -6,7 +6,7 @@ public class BookDto {
     private String title;
     private String author;
 
-    public BookDto() {
+    public BookDto() {          // konstruktor bezparametrowy (domyślny)
     }
 
     public BookDto(String title, String author) {

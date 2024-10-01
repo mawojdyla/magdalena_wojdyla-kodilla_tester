@@ -1,5 +1,6 @@
 package com.kodilla.rest.controller;
 
+import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.hamcrest.Matchers;
@@ -12,8 +13,11 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import static io.restassured.RestAssured.given;
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.when;
 
 
@@ -21,6 +25,7 @@ import static io.restassured.module.mockmvc.RestAssuredMockMvc.when;
 class BookControllerRestAssuredTest {
     @Mock
     private BookService bookService;
+
     @InjectMocks
     private BookController bookController;
 
@@ -47,5 +52,27 @@ class BookControllerRestAssuredTest {
                 .body("[1].title", Matchers.equalTo("Title 2"))
                 .body("[1].author", Matchers.equalTo("Author 2"))
                 .statusCode(HttpStatus.OK.value());
+    }
+
+    @Test
+    void shouldAddBook() {
+
+        // given
+        BookDto bookDto = new BookDto("Title 1", "Author 1");
+
+        // when
+        Map<String, Object> bookData = new HashMap<>();
+        bookData.put("title", "Title 1");
+        bookData.put("author", "Author 1");
+
+        given()
+                .header("Content-Type", "application/json")
+                .body(bookData)
+        .when()
+                .post("/books")
+        .then()
+                .statusCode(HttpStatus.OK.value());
+
+        Mockito.verify(bookService, Mockito.times(1)).addBook(Mockito.any(BookDto.class));
     }
 }

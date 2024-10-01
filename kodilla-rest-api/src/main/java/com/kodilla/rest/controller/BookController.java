@@ -1,5 +1,6 @@
 package com.kodilla.rest.controller;
 
+import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,12 @@ class BookController {
     public void addBook(@RequestBody BookDto bookDto) {
         bookService.addBook(bookDto);
     }
+
+//    @PostMapping
+//    public ResponseEntity<BookDto> addBook(@RequestBody BookDto bookDto) {
+//        bookService.addBook(bookDto);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(bookDto);
+//    }
 
     @DeleteMapping
     public void deleteBook(@RequestBody BookDto bookDto) {

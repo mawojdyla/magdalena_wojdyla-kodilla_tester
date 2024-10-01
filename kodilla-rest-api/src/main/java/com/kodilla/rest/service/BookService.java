@@ -1,6 +1,6 @@
 package com.kodilla.rest.service;
 
-import com.kodilla.rest.controller.BookDto;
+import com.kodilla.rest.domain.BookDto;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,5 +25,5 @@ public class BookService {
 
 /*
 Adnotacja @Service nad klasą informuje Springa o tym,
-że ta klasa jest beanem i jej obiekt ma zostać utworzone w kontenerze Springa.
+że ta klasa jest beanem i jej obiekt ma zostać utworzony w kontenerze Springa.
  */
