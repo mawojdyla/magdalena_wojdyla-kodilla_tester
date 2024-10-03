@@ -67,7 +67,7 @@ class BookControllerRestAssuredTest {
 
         given()
                 .header("Content-Type", "application/json")
-                .body(bookData)
+                .body(bookDto)
         .when()
                 .post("/books")
         .then()
