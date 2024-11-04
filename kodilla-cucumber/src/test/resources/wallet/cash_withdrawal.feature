@@ -1,0 +1,33 @@
+Feature: Cash Withdrawal
+  Scenario: Successful withdrawal from a wallet
+    Given I have deposited $200 in my wallet
+    When I request $30
+    Then $30 should be dispensed
+    And the balance of my wallet should be $170
+
+#  Scenario: Withdraw the exact balance
+#    Given I have deposited $200 in my wallet
+#    When I request $200
+#    Then $200 should be dispensed
+#    And the balance of my wallet should be $0
+#
+#  Scenario: Withdrawal with zero balance
+#    Given I have deposited $0 in my wallet
+#    When I request $30
+#    Then I should see an error "Insufficient funds"
+#    And the balance of my wallet should be $0
+#
+#  Scenario: Withdrawal of a negative amount
+#    Given I have deposited $200 in my wallet
+#    When I request $-50
+#    Then I should see an error "Amount must be greater than zero"
+#    And the balance of my wallet should be $200
+#
+#  Scenario: Deposit of zero amount
+#    Given I have deposited $0 in my wallet
+#    Then I should see an error "Deposit amount must be greater than zero"
+#
+#  Scenario: Deposit of a negative amount
+#    Given I have deposited $-100 in my wallet
+#    Then I should see an error "Deposit amount must be greater than zero"
+
