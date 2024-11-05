@@ -8,6 +8,8 @@ build/
 .idea/
 .idea/jarRepositories.xml
 .idea/compiler.xml
+.idea/gradle.xml
+.idea/vcs.xml
 .idea/libraries/
 *.iws
 *.iml
@@ -40,3 +42,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+task_app_backend/
