@@ -22,7 +22,7 @@ public class CalculatorTestSuite {
         double a = 5.8;
         double b = 8.3;
         double subtractResult = calculator.subtract(a, b);
-        assertEquals(-2.5, subtractResult, 0.1);    // // Używamy delty 0.1 dla dokładności
+        assertEquals(-2.5, subtractResult, 0.01);    // // Używamy delty 0.01 dla dokładności
     }
 
     @Test
